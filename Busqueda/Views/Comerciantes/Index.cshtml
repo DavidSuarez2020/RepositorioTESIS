@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Busqueda.Models.Comerciantes>
+
+@{
+    ViewBag.Title = "Panel de Busqueda";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm())
+  {
+    <div>
+     @Html.TextBox("cadena","",new { @class="form-control"})
+     <button type="submit" class="btn btn-primary">Buscar</button> 
+    </div>
+  }
+
+
+@if(Model!=null)
+ {
+
+ 
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellidos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cedula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Capacitacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Institucion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nombres)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Apellidos)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Cedula)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Capacitacion)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Institucion)
+    </td>
+
+    <!-- ESTO ESTA COMENTADO PORQUE EL USUARIO NO PUEDE MODIFICAR REGISTROS
+    <td>
+        Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+        Html.ActionLink("Details", "Details", new { id=item.ID }) |
+        Html.ActionLink("Delete", "Delete", new { id=item.ID })
+    </td>
+    -->
+</tr>
+}
+
+</table>
+
+}  
