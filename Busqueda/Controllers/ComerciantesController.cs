@@ -17,7 +17,8 @@ namespace Busqueda.Controllers
         // GET: Comerciantes
         public ActionResult Index(string cadena)
         {
-            var Comerciantes = from cr in db.Comerciantes select cr;
+            int ci = int.Parse(cadena);
+            var Comerciantes = from cr in db.Comerciantes where cr.Cedula==ci select cr;
             
             if (!String.IsNullOrEmpty(cadena))
             {
