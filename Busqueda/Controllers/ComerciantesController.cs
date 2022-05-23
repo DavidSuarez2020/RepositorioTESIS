@@ -17,13 +17,13 @@ namespace Busqueda.Controllers
         // GET: Comerciantes
         public ActionResult Index(string cadena)
         {
-            //int ci = int.Parse(cadena);
+            int ci = int.Parse(cadena);
             var Comerciantes = from cr in db.Comerciantes where cr.Cedula==ci select cr;
             
-            //if (!String.IsNullOrEmpty(cadena))
-            //{
-               // Comerciantes = Comerciantes.Where(c => c.Nombres.Contains(cadena));
-            //}
+            if (!String.IsNullOrEmpty(cadena))
+            {
+               Comerciantes = Comerciantes.Where(c => c.Nombres.Contains(cadena) || c.Apellidos.Contains(cadena));
+            }
             return View(Comerciantes);
             //return View(db.Comerciantes.ToList());
         }
