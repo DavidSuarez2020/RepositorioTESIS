@@ -17,8 +17,35 @@ namespace Busqueda.Controllers
         // GET: Comerciantes
         public ActionResult Index(string cadena)
         {
-            int ci = int.Parse(cadena);
+            var Comerciantes = from cr in db.Comerciantes select cr;
             var Comerciantes = from cr in db.Comerciantes where cr.Cedula==ci select cr;
+=========
+            var Comerciantes = from cr in db.Comerciantes select cr;
+>>>>>>>>> Temporary merge branch 2
+            var Comerciantes = from cr in db.Comerciantes where cr.Cedula==ci select cr;
+=========
+            var Comerciantes = from cr in db.Comerciantes select cr;
+>>>>>>>>> Temporary merge branch 2
+            var Comerciantes = from cr in db.Comerciantes where cr.Cedula==ci select cr;
+=========
+            var Comerciantes = from cr in db.Comerciantes select cr;
+>>>>>>>>> Temporary merge branch 2
+            var Comerciantes = from cr in db.Comerciantes where cr.Cedula==ci select cr;
+=========
+            var Comerciantes = from cr in db.Comerciantes select cr;
+>>>>>>>>> Temporary merge branch 2
+            var Comerciantes = from cr in db.Comerciantes where cr.Cedula==ci select cr;
+=========
+            var Comerciantes = from cr in db.Comerciantes select cr;
+>>>>>>>>> Temporary merge branch 2
+            var Comerciantes = from cr in db.Comerciantes where cr.Cedula==ci select cr;
+=========
+            var Comerciantes = from cr in db.Comerciantes select cr;
+>>>>>>>>> Temporary merge branch 2
+            var Comerciantes = from cr in db.Comerciantes where cr.Cedula==ci select cr;
+=========
+            var Comerciantes = from cr in db.Comerciantes select cr;
+>>>>>>>>> Temporary merge branch 2
             
             if (!String.IsNullOrEmpty(cadena))
             {
